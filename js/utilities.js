@@ -1,5 +1,6 @@
+import { milesToCalifornia } from './consts.js';
+
 function getAverageMilesPerDay () {
-  const milesToCalifornia = 3000;
   const startDate = new Date('1841-05-19');
   const endDate = new Date('1841-11-05');
   const durationInMS = endDate - startDate;

@@ -4,20 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
     <title>California Trail</title>
 </head>
 
 <body>
-    <div id="game">
-        <dl>
-            <dt>Miles Travelled</dt>
-            <dl id="miles"></dl>
-            <dt>Turn</dt>
-            <dl id="turn"></dl>
-            <dt>Date</dt>
-            <dl id="date"></dl>
-        </dl>
-        <button id="advance">Advance Turn</button>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">California Trail</span>
+        </div>
+    </nav>
+
+
+    <div class="container" id="game">
+        <div class="row">
+            <div class="col-md-9">
+
+            </div>
+            <div class="col-md-3">
+                <!-- <ul class="list-group">
+                    <li class="list-group-item">Cras justo</li>
+                    <li class="list-group-item">Dapibus facilisis</li>
+                    <li class="list-group-item">Morbi risus</li>
+                    <li class="list-group-item">Porta consectetur</li>
+                    <li class="list-group-item">Vestibulum eros</li>
+                </ul> -->
+            </div>
+        </div>
+        <section class="screen">
+
+        </section>
+        <section class="progress">
+            <div class="progress-bar" role="progressbar" id="progress"></div>
+        </section>
+        <section class="stats row align-items-end">
+            <div class="row row-cols-2 row-cols-md-3 g-1">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                Date
+                                <i class="bi bi-calendar-event"></i>
+                            </h5>
+                            <p class="card-text" id="date"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                Weather
+                                <i class="bi bi-sun"></i>
+                            </h5>
+                            <p class="card-text" id="weather">Warm</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                Health
+                                <i class="bi bi-file-medical"></i>
+                            </h5>
+                            <p class="card-text" id="health">Good</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                Food
+                                <i class="bi bi-archive"></i>
+                            </h5>
+                            <p class="card-text" id="food">1000 pounds</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                Next Landmark
+                                <i class="bi bi-geo-fill"></i>
+                            </h5>
+                            <p class="card-text">XXX</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                Miles Traveled
+                                <i class="bi bi-map"></i>
+                            </h5>
+                            <p class="card-text" id="miles"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <div class="container-fluid justify-content-center">
+            <button type="button" class="btn btn-primary" id="advance">Advance Turn</button>
+        </div>
+    </nav>
+
+
+    <div class="modal fade" id="winnerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">You're winner!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <i class="bi bi-trophy"></i>
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="index.js"></script>
