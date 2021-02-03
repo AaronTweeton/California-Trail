@@ -1,5 +1,6 @@
 import { getAverageMilesPerDay } from './utilities.js';
 import { milesToCalifornia } from './consts.js';
+import { getPeople } from './people.js';
 
 export default class Game {
   constructor (title) {
@@ -9,6 +10,7 @@ export default class Game {
     this.turn = 0;
     this.progress = 0;
     this.milesTravelled = 0;
+    this.people = getPeople(10);
   }
 
   init () {
@@ -29,6 +31,7 @@ export default class Game {
   }
 
   refreshStats () {
+    // console.table(this.people);
     this.updateCurrentDate();
     this.updateProgress();
     this.updateMilesTravelled();
@@ -38,6 +41,7 @@ export default class Game {
   }
   
   showWinnerModal () {
+    /* global bootstrap */
     const myModal = new bootstrap.Modal(document.getElementById('winnerModal'), {});
     myModal.show();
   }
